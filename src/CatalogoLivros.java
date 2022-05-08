@@ -12,8 +12,13 @@ public class CatalogoLivros {
 	}
 	
 	public boolean remover(int posicao){
-		livros.remove(posicao);
+		if(posicao < 0 || posicao > livros.size()){
+			System.out.println("Livro em posição inexistente");
+			return false;
+		}else{
+			livros.remove(posicao);
 		return true;
+		}
 	}
 	
 	public void imprimirDadosLivro(int i) {	

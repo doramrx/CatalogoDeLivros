@@ -1,10 +1,10 @@
-
+import java.util.ArrayList;
 public class Livro {
 	private String resumo;
 	private String titulo;
 	private String autor;
 	private int numPaginas;
-	private String palavrasChave;
+	private ArrayList<String> palavrasChave = new ArrayList<String>();
 
     public void setResumo(String resumo) {
         this.resumo = resumo;
@@ -18,15 +18,20 @@ public class Livro {
     public void setNumPaginas(int numPaginas) {
         this.numPaginas = numPaginas;
     }
-    public void setPalavrasChave(String palavrasChave) {
-        this.palavrasChave = palavrasChave;
+
+    public void setPalavrasChave(String palavraChave) {
+        palavrasChave.add(palavraChave); 
     }
-    
+
     public void mostrarDados() {
     	System.out.println("Resumo: " + this.resumo);
-		System.out.println("Título: " + this.titulo);
+		System.out.println("Tï¿½tulo: " + this.titulo);
 		System.out.println("Autor: " + this.autor);
-		System.out.println("Número de Páginas: " + this.numPaginas);
-		System.out.println("Palavras-chave: " + this.palavrasChave);	
+		System.out.println("Nï¿½mero de Pï¿½ginas: " + this.numPaginas);
+        System.out.println("Palavras-chave: ");
+        for(int i = 0; i < palavrasChave.size(); i++){
+            System.out.println(palavrasChave.get(i));	
+        }
+        System.out.println();
     }
 }
